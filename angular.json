@@ -793,6 +793,101 @@
           }
         }
       }
+    },
+    "practice_property-event-binding_view-encapsulation": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/practice_property-event-binding_view-encapsulation",
+      "sourceRoot": "projects/practice_property-event-binding_view-encapsulation/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/practice_property-event-binding_view-encapsulation",
+            "index": "projects/practice_property-event-binding_view-encapsulation/src/index.html",
+            "main": "projects/practice_property-event-binding_view-encapsulation/src/main.ts",
+            "polyfills": "projects/practice_property-event-binding_view-encapsulation/src/polyfills.ts",
+            "tsConfig": "projects/practice_property-event-binding_view-encapsulation/tsconfig.app.json",
+            "assets": [
+              "projects/practice_property-event-binding_view-encapsulation/src/favicon.ico",
+              "projects/practice_property-event-binding_view-encapsulation/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/practice_property-event-binding_view-encapsulation/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/practice_property-event-binding_view-encapsulation/src/environments/environment.ts",
+                  "with": "projects/practice_property-event-binding_view-encapsulation/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "practice_property-event-binding_view-encapsulation:build:production"
+            },
+            "development": {
+              "browserTarget": "practice_property-event-binding_view-encapsulation:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "practice_property-event-binding_view-encapsulation:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/practice_property-event-binding_view-encapsulation/src/test.ts",
+            "polyfills": "projects/practice_property-event-binding_view-encapsulation/src/polyfills.ts",
+            "tsConfig": "projects/practice_property-event-binding_view-encapsulation/tsconfig.spec.json",
+            "karmaConfig": "projects/practice_property-event-binding_view-encapsulation/karma.conf.js",
+            "assets": [
+              "projects/practice_property-event-binding_view-encapsulation/src/favicon.ico",
+              "projects/practice_property-event-binding_view-encapsulation/src/assets"
+            ],
+            "styles": [
+              "projects/practice_property-event-binding_view-encapsulation/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "practicing-components"
