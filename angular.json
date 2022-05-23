@@ -603,6 +603,101 @@
           }
         }
       }
+    },
+    "recipe_shopping-list": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/recipe_shopping-list",
+      "sourceRoot": "projects/recipe_shopping-list/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/recipe_shopping-list",
+            "index": "projects/recipe_shopping-list/src/index.html",
+            "main": "projects/recipe_shopping-list/src/main.ts",
+            "polyfills": "projects/recipe_shopping-list/src/polyfills.ts",
+            "tsConfig": "projects/recipe_shopping-list/tsconfig.app.json",
+            "assets": [
+              "projects/recipe_shopping-list/src/favicon.ico",
+              "projects/recipe_shopping-list/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/recipe_shopping-list/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/recipe_shopping-list/src/environments/environment.ts",
+                  "with": "projects/recipe_shopping-list/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "recipe_shopping-list:build:production"
+            },
+            "development": {
+              "browserTarget": "recipe_shopping-list:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "recipe_shopping-list:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/recipe_shopping-list/src/test.ts",
+            "polyfills": "projects/recipe_shopping-list/src/polyfills.ts",
+            "tsConfig": "projects/recipe_shopping-list/tsconfig.spec.json",
+            "karmaConfig": "projects/recipe_shopping-list/karma.conf.js",
+            "assets": [
+              "projects/recipe_shopping-list/src/favicon.ico",
+              "projects/recipe_shopping-list/src/assets"
+            ],
+            "styles": [
+              "projects/recipe_shopping-list/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "practicing-components"
