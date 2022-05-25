@@ -5,6 +5,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core'
 })
 
 export class BasicHighLightDirective implements OnInit {
+    
    constructor(private elementRef:ElementRef){
    }
    ngOnInit(): void {
