@@ -1004,6 +1004,7 @@
               "projects/service-di/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/service-di/src/styles.css"
             ],
             "scripts": []
