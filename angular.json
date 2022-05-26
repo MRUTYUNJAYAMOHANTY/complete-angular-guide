@@ -983,6 +983,100 @@
           }
         }
       }
+    },
+    "service_DI": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/service-di",
+      "sourceRoot": "projects/service-di/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/service-di",
+            "index": "projects/service-di/src/index.html",
+            "main": "projects/service-di/src/main.ts",
+            "polyfills": "projects/service-di/src/polyfills.ts",
+            "tsConfig": "projects/service-di/tsconfig.app.json",
+            "assets": [
+              "projects/service-di/src/favicon.ico",
+              "projects/service-di/src/assets"
+            ],
+            "styles": [
+              "projects/service-di/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/service-di/src/environments/environment.ts",
+                  "with": "projects/service-di/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "service_DI:build:production"
+            },
+            "development": {
+              "browserTarget": "service_DI:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "service_DI:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/service-di/src/test.ts",
+            "polyfills": "projects/service-di/src/polyfills.ts",
+            "tsConfig": "projects/service-di/tsconfig.spec.json",
+            "karmaConfig": "projects/service-di/karma.conf.js",
+            "assets": [
+              "projects/service-di/src/favicon.ico",
+              "projects/service-di/src/assets"
+            ],
+            "styles": [
+              "projects/service-di/src/styles.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
     }
   },
   "defaultProject": "recipe_shopping-list"
