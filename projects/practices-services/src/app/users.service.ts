@@ -4,8 +4,8 @@ import { CounterService } from './counter.service';
 
 @Injectable()
 export class UserService {
-  activeUsers = ['Max', 'Anna'];
-  inactiveUsers = ['Chris', 'Manu'];
+  activeUsers = ['Datsciene', 'ML'];
+  inactiveUsers = ['AI', 'DeepLearning'];
 
   constructor(private counterService: CounterService) {}
 
