@@ -14,4 +14,12 @@ export class ShoppingListService {
           this.ingredients.push(ingredient);
           this.ingredientsChanged.emit(this.ingredients.slice())
       }
+
+      addIngredients(ingredients:Ingredient[]){
+        //   for(let ingredient of ingredients){
+        //    this.addIngredient(ingredient);
+        //   } due to more emit this approach is not better , but is ok
+        this.ingredients.push(...ingredients);
+        this.ingredientsChanged.emit(this.ingredients.slice());
+      }
 }
