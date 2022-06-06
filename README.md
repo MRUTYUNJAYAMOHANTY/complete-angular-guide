@@ -1,4 +1,4 @@
-# CompleteAngularGuide
+# CompleteAngularGuide (Version 13.3.0)
 
 # create workspace (e.g MultipleApps)
   ng new MultipleApps --createApplication="false" --no-strict
@@ -9,3 +9,5 @@
      If we want to make strict = false in tsconfig.json
 
   In this work-space most application are made having --no-strict false.
+  - make add routing : false
+  - choose style sheet : css
