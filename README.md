@@ -4,7 +4,8 @@
   ng new MultipleApps --createApplication="false" --no-strict
 # create application (e.g my-app)
   ng g application my-app --no-strict
-
+# create component without spec files 
+  ng g c component-name --skipTests
   ## --no-strict is optional
      If we want to make strict = false in tsconfig.json
 
