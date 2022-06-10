@@ -5,7 +5,7 @@
 # create application (e.g my-app)
   ng g application my-app --no-strict
 # create component without spec files 
-  ng g c component-name --skipTests
+  ng g c component-name --skip-tests
   ## --no-strict is optional
      If we want to make strict = false in tsconfig.json
 
