@@ -7,8 +7,9 @@
 # create component without spec files 
   ng g c component-name --skip-tests
   ## --no-strict is optional
-     If we want to make strict = false in tsconfig.json
-
-  In this work-space most application are made having --no-strict false.
-  - make add routing : false
-  - choose style sheet : css
+     * It does strict = false in tsconfig.json
+     * In this work-space most application are made having --no-strict false.
+     * while installing an application choosed below options
+        ? Would you like to add Angular routing? No
+        ? Which stylesheet format would you like to use? CSS
+  
