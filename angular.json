@@ -1384,6 +1384,7 @@
               "projects/forms/src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/forms/src/styles.css"
             ],
             "scripts": []
