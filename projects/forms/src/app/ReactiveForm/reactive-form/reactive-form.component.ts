@@ -24,18 +24,39 @@ export class ReactiveFormComponent implements OnInit {
     // this.signUpForm.valueChanges.subscribe(
     // (value)=>{console.log(value);}
     // );
+
     //on status change
     // this.signUpForm.statusChanges.subscribe(
     //   (status)=>{console.log(status);}
     //   );
+
+    //set value
+    this.signUpForm.setValue({
+      'userData':{
+        'username':'Lucky',
+        'email':'lucky@luck.com'
+      },
+      'gender':'male',
+      'hobbies':[]
+    });
+
+    // patch value
+    this.signUpForm.patchValue({
+      'userData':{
+        'username':'chotu',
+      }
+    });
   }
   genders = ['male', 'female'];
   signUpForm: FormGroup;
   forbiddenUsernames = ['chotu','dhola'];
+
   onSubmit(){
     console.log(this.signUpForm);
-    
+    // optional : we can pass an object to reset() to reset to specific values!
+    this.signUpForm.reset();
   }
+
   onAddHobby(){
     const control = new FormControl(null, Validators.required);
     (<FormArray>this.signUpForm.get('hobbies')).push(control);
