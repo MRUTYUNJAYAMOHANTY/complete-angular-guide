@@ -19,7 +19,15 @@ export class ReactiveFormComponent implements OnInit {
        }),
       'gender': new FormControl('male'),
       'hobbies': new FormArray([])
-    })
+    });
+    // on value changes
+    // this.signUpForm.valueChanges.subscribe(
+    // (value)=>{console.log(value);}
+    // );
+    //on status change
+    // this.signUpForm.statusChanges.subscribe(
+    //   (status)=>{console.log(status);}
+    //   );
   }
   genders = ['male', 'female'];
   signUpForm: FormGroup;
